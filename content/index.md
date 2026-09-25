@@ -2,8 +2,8 @@
 title: Aadi's Brain
 ---
 ---
-title: Aadi's Brain
----
+
+## title: Aadi's Brain
 
 # 🧠 Aadi's Brain
 
@@ -13,8 +13,172 @@ title: Aadi's Brain
 
 ## 📚 Knowledge
 
-- [AWS](AWS/AWS)
-- [Basic Cloud Computing](AWS/Basic%20Cloud/Basic%20Cloud%20Computing)
-- [DSA](DSA/DSA)
-- [AI](AI/AI)
-- [IoT](IOT/01%20-%20What%20is%20IoT)
+### ☁️ Cloud & AWS
+
+- [[AWS/AWS]]
+    
+- [[AWS/Basic Cloud/Basic Cloud Computing]]
+    
+
+---
+
+### 🧠 DSA
+
+- [[DSA/DSA]]
+    
+
+---
+
+### 🤖 AI
+
+- [[AI/AI]]
+    
+
+---
+
+### 🌐 IoT
+
+- [[IOT/01 - What is IoT]]
+    
+
+---
+
+### 🐙 Git & GitHub
+
+#### Git Fundamentals
+
+- [[Git/01 - Git Basics]]
+    
+- [[Git/02 - Git vs GitHub]]
+    
+- [[Git/03 - Git Repository]]
+    
+- [[Git/04 - git init]]
+    
+
+#### Git Working Area
+
+- [[Git/05 - Working Directory]]
+    
+- [[Git/06 - Staging Area]]
+    
+- [[Git/07 - Git Commit]]
+    
+- [[Git/16 - Git Status]]
+    
+
+#### Git Branching
+
+- [[Git/08 - Git Branches]]
+    
+- [[Git/09 - Working on Main Branch]]
+    
+- [[Git/10 - Merge]]
+    
+
+#### GitHub / Remote
+
+- [[Git/11 - Remote Repository]]
+    
+- [[Git/12 - Origin]]
+    
+- [[Git/13 - Push]]
+    
+- [[Git/14 - Pull]]
+    
+- [[Git/15 - Fetch]]
+    
+
+#### Git History & Inspection
+
+- [[Git/17 - Git Log]]
+    
+- [[Git/18 - Git Diff]]
+    
+- [[Git/19 - Git Restore]]
+    
+- [[Git/20 - Git Stash]]
+    
+- [[Git/21 - Git Revert]]
+    
+- [[Git/22 - Git Reset]]
+    
+- [[Git/23 - HEAD]]
+    
+- [[Git/24 - Git Reflog]]
+    
+
+#### Git Configuration
+
+- [[Git/25 - Gitignore]]
+    
+- [[Git/26 - Git Workflow]]
+    
+
+---
+
+# 🗺️ Knowledge Map
+
+```text
+Aadi's Brain
+│
+├── ☁️ AWS
+│   ├── AWS
+│   └── Basic Cloud Computing
+│
+├── 🧠 DSA
+│   └── DSA
+│
+├── 🤖 AI
+│   └── AI
+│
+├── 🌐 IoT
+│   └── What is IoT
+│
+└── 🐙 Git & GitHub
+    │
+    ├── Fundamentals
+    │   ├── Git Basics
+    │   ├── Git vs GitHub
+    │   ├── Git Repository
+    │   └── git init
+    │
+    ├── Working Area
+    │   ├── Working Directory
+    │   ├── Staging Area
+    │   ├── Git Commit
+    │   └── Git Status
+    │
+    ├── Branching
+    │   ├── Git Branches
+    │   ├── Working on Main Branch
+    │   └── Merge
+    │
+    ├── Remote
+    │   ├── Remote Repository
+    │   ├── Origin
+    │   ├── Push
+    │   ├── Pull
+    │   └── Fetch
+    │
+    └── History
+        ├── Git Log
+        ├── Git Diff
+        ├── Git Restore
+        ├── Git Stash
+        ├── Git Revert
+        ├── Git Reset
+        └── Git Reflog
+```
+
+# 🔗 Main Areas
+
+- [[Git/Git]]
+    
+- [[AWS/AWS]]
+    
+- [[DSA/DSA]]
+    
+- [[AI/AI]]
+    
+- [[IOT/01 - What is IoT]]
