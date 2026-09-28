@@ -1,296 +1,95 @@
 ---
 title: CN Module 1 Home
-subject: Computer Network
+subject: Computer Networks
 module: Module 1 - Networking Basics
-college: Walchand College of Engineering, Sangli
+exam: WCE MSE/ESE
 ---
-
-# 🌐 Computer Networks — Module 1
-
-> **Goal:** Understand the concepts, solve the numericals, draw the required diagrams, and write answers in WCE MSE/ESE style.
-
----
-
-## 📚 Module 1 Roadmap
-
-### 1. Data Communication
-- [[01 - Data Communication]]
-- Components of Data Communication
-- Data Representation
-- Data Flow
-
-### 2. Protocols
-- [[03 - Protocols]]
-- Syntax
-- Semantics
-- Timing
-
-### 3. Analog and Digital
-- [[04 - Analog Digital]]
-- Analog data vs Digital data
-- Analog signal vs Digital signal
-- Periodic vs Nonperiodic signals
-
-### 4. Periodic Analog Signals
-- [[05 - Sine Wave]]
-- Amplitude
-- Frequency
-- Period
-- Phase
-- Wavelength
-- Propagation speed
-
-### 5. Time and Frequency Domain
-- [[06 - Time Frequency Domain]]
-- Time-domain representation
-- Frequency-domain representation
-- Frequency spikes
-- Discrete vs Continuous frequencies
-
-### 6. Composite Signals
-- [[07 - Composite Signals]]
-- Fourier analysis
-- Periodic composite signals
-- Nonperiodic composite signals
-- Decomposition
-
-### 7. Bandwidth
-- [[08 - Bandwidth]]
-- Highest frequency
-- Lowest frequency
-- Bandwidth calculation
-- Spectrum
-
-### 8. Digital Signals
-- Bit rate
-- Bit length
-- Signal elements
-- Signal levels
-- [[09 - Signal Levels]]
-
-### 9. Transmission
-- Baseband transmission
-- Bandpass transmission
-- Digital signal as a composite analog signal
-
-### 10. Transmission Impairment
-- [[10 - Transmission Impairment]]
-- [[11 - Attenuation]]
-- [[12 - Distortion]]
-- [[13 - Noise]]
-- [[14 - SNR]]
-
-### 11. Data Rate Limits
-- [[15 - Nyquist]]
-- [[16 - Shannon]]
-- [[17 - Using Both Limits]]
-
-### 12. Reference Models
-- [[18 - OSI]]
-- [[19 - OSI TCPIP]]
-- [[27 - OSI vs TCP-IP]]
-
----
-
-# 🎯 PYQ-Based Preparation
-
-## How WCE asks questions
-
-### 2 Marks
-Usually:
-- Define
-- State
-- Differentiate briefly
-- Give formula
-- Identify a concept
-
-### 4 Marks
-Usually:
-- Explain with suitable example
-- Compare two concepts
-- Draw and explain a diagram
-- Solve a numerical
-
-### 6 Marks
-Usually:
-- Detailed explanation
-- Comparison + diagram
-- Algorithm/protocol working
-- Numerical + explanation
-
----
-
-# ✍️ Answer Writing Formula
-
-## For Theory
-
-**Definition → Explanation → Diagram → Example → Key point**
-
-## For Numerical
-
-**Given → Required → Formula → Substitution → Calculation → Final answer with unit**
-
-## For Comparison
-
-Use a table:
-
-| Point | Concept A | Concept B |
-|---|---|---|
-| Definition | | |
-| Working | | |
-| Advantage | | |
-| Application | | |
-
-## For Diagram Questions
-
-1. Draw a clean diagram.
-2. Label every important part.
-3. Explain the diagram below it.
-4. Mention the important formula if applicable.
-
----
-
-# 🧮 Important Formulas
-
-### Frequency and Period
-
-$$
-f = \frac{1}{T}
-$$
-
-$$
-T = \frac{1}{f}
-$$
-
-### Wavelength
-
-$$
-\lambda = \frac{v}{f}
-$$
-
-### Bandwidth
-
-$$
-B = f_H - f_L
-$$
-
-### Decibel
-
-$$
-dB = 10\log_{10}\left(\frac{P_2}{P_1}\right)
-$$
-
-### SNR
-
-$$
-SNR = \frac{P_s}{P_n}
-$$
-
-$$
-SNR_{dB}=10\log_{10}(SNR)
-$$
-
-### Nyquist
-
-$$
-Bit\ Rate = 2B\log_2 L
-$$
-
-### Shannon
-
-$$
-C = B\log_2(1+SNR)
-$$
-
-### Bits per Signal Level
-
-$$
-bits/level = \log_2 L
-$$
-
----
-
-# 🔥 Must-Know Concepts
-
-- [ ] Data communication components
-- [ ] Simplex / Half-duplex / Full-duplex
-- [ ] Protocol: Syntax, Semantics, Timing
-- [ ] Analog vs Digital
-- [ ] Periodic vs Nonperiodic
-- [ ] Amplitude, Frequency, Period, Phase
-- [ ] Wavelength and propagation speed
-- [ ] Time domain vs Frequency domain
-- [ ] Composite signals
-- [ ] Fourier decomposition
-- [ ] Discrete vs Continuous frequencies
-- [ ] Bandwidth
-- [ ] Digital signal levels
-- [ ] Bit rate
-- [ ] Baseband vs Bandpass
-- [ ] Attenuation
-- [ ] Distortion
-- [ ] Noise and its types
-- [ ] SNR
-- [ ] Nyquist theorem
-- [ ] Shannon capacity
-- [ ] Using Nyquist + Shannon together
-- [ ] OSI model
-- [ ] TCP/IP model
-- [ ] OSI vs TCP/IP
-
----
-
-# 📝 Practice Questions
-
-Go to:
-
-- [[03 - Sample-Questions/01 - Data Communication]]
-- [[03 - Sample-Questions/05 - Sine Wave]]
-- [[03 - Sample-Questions/06 - Time Frequency Domain]]
-- [[03 - Sample-Questions/07 - Composite Signals]]
-- [[03 - Sample-Questions/08 - Bandwidth]]
-- [[03 - Sample-Questions/10 - Transmission Impairment]]
-- [[03 - Sample-Questions/11 - Attenuation]]
-- [[03 - Sample-Questions/12 - Distortion]]
-- [[03 - Sample-Questions/13 - Noise]]
-- [[03 - Sample-Questions/14 - SNR]]
-- [[03 - Sample-Questions/15 - Nyquist]]
-- [[03 - Sample-Questions/16 - Shannon]]
-- [[03 - Sample-Questions/17 - Using Both Limits]]
-- [[03 - Sample-Questions/18 - OSI]]
-- [[03 - Sample-Questions/19 - OSI TCPIP]]
-
----
-
-# 📊 PYQ Analysis
-
-[[04-PYQ-Analysis/01 - CN PYQ Analysis]]
-
-[[04-PYQ-Analysis/02 - Extracted CN Questions]]
-
----
-
-# 🧠 Final Revision Strategy
-
-### Round 1 — Understand
-Read the topic and explain it in your own words.
-
-### Round 2 — Diagram
-Draw the important diagram without looking.
-
-### Round 3 — Formula
-Write all formulas from memory.
-
-### Round 4 — PYQ
-Solve previous questions.
-
-### Round 5 — Exam Answer
-Practice writing the answer in the required marks.
-
-> **Understand → Draw → Formula → PYQ → Write**
-
----
-
-# ⭐ Golden Rule
-
-> **Don't memorize the answer first. Understand the concept, then memorize the structure of the answer.**
+# 🌐 CN Module 1 — Exam Command Center
+
+> This vault is built for **understanding + PYQ analysis + application questions + answer writing + numerical practice**.
+
+## 🚨 Start Here
+1. [[07-Paper-Analysis/01 - What WCE Actually Asks]]
+2. [[07-Paper-Analysis/02 - Question Pattern Analysis 2025 vs 2026]]
+3. [[07-Paper-Analysis/03 - Module 1 High Priority Map]]
+4. [[08-Predicted-Question-Bank/01 - Prediction Dashboard]]
+5. [[01-Exam-Strategy/01 - How to Write CN Answers]]
+
+## 📚 Topic Map
+- [[02-Topics/01 - Data Communication]]
+- [[02-Topics/02 - Components of Data Communication]]
+- [[02-Topics/03 - Data Flow]]
+- [[02-Topics/04 - Data Representation]]
+- [[02-Topics/05 - Protocols]]
+- [[02-Topics/06 - Analog vs Digital Data and Signals]]
+- [[02-Topics/07 - Periodic vs Nonperiodic Signals]]
+- [[02-Topics/08 - Sine Wave Parameters]]
+- [[02-Topics/09 - Time Domain and Frequency Domain]]
+- [[02-Topics/10 - Composite Signals and Fourier Analysis]]
+- [[02-Topics/11 - Bandwidth]]
+- [[02-Topics/12 - Digital Signals]]
+- [[02-Topics/13 - Bit Rate and Bit Length]]
+- [[02-Topics/14 - Signal Levels and Bits per Level]]
+- [[02-Topics/15 - Baseband and Bandpass Transmission]]
+- [[02-Topics/16 - Transmission Impairment]]
+- [[02-Topics/17 - Attenuation]]
+- [[02-Topics/18 - Distortion]]
+- [[02-Topics/19 - Noise]]
+- [[02-Topics/20 - Signal to Noise Ratio (SNR)]]
+- [[02-Topics/21 - Data Rate Limits]]
+- [[02-Topics/22 - Nyquist Bit Rate]]
+- [[02-Topics/23 - Shannon Capacity]]
+- [[02-Topics/24 - Using Nyquist and Shannon Together]]
+- [[02-Topics/25 - OSI Reference Model]]
+- [[02-Topics/26 - TCP-IP Protocol Suite]]
+- [[02-Topics/27 - OSI vs TCP-IP]]
+
+## 🧪 Application-Based Practice
+Every major topic has an application question file in [[05-Application-Question-Bank]]. These are not random textbook definitions; they are scenario questions built in the style of the uploaded WCE paper: identify the concept, justify it, calculate where needed, and explain the effect.
+
+## 📝 PYQ Evidence
+[[06-PYQ-Mapping/01 - 2026 CN MSE Question Map]]
+
+[[06-PYQ-Mapping/02 - 2025 CN MSE Question Map]]
+
+[[06-PYQ-Mapping/03 - Cross-Year Recurrence]]
+
+## 🔮 Prediction
+[[08-Predicted-Question-Bank/01 - Prediction Dashboard]]
+
+> Prediction means **pattern-based preparation priority**, not a guarantee of the next paper.
+
+## ✍️ Answer Architecture
+### 2 marks
+**Definition → one key point → formula/example if relevant**
+
+### 4 marks
+**Definition → working/logic → labelled diagram → example/conclusion**
+
+### 6 marks
+**Introduction → detailed working → diagram/table → application/example → conclusion**
+
+### Numerical
+**Given → Required → Formula → substitution → calculation → unit → interpretation**
+
+## 🧮 Formula Sheet
+- `f = 1/T`
+- `T = 1/f`
+- `λ = v/f`
+- `B = fH - fL`
+- `dB = 10 log10(P2/P1)`
+- `SNR = Ps/Pn`
+- `SNRdB = 10 log10(SNR)`
+- `Nyquist = 2B log2(L)`
+- `Shannon = B log2(1+SNR)`
+- `bits per signal element = log2(L)`
+
+## 🔥 Exam Checklist
+- [ ] Explain a concept in your own words
+- [ ] Draw its diagram without looking
+- [ ] Solve at least one numerical
+- [ ] Solve one application scenario
+- [ ] Write one 4-mark answer
+- [ ] Write one 6-mark answer
+- [ ] Attempt the mapped PYQs
+- [ ] Review the prediction dashboard
