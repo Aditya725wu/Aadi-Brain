@@ -1,341 +1,133 @@
 # ☁️ EC2 Overview
 
-> **EC2 (Elastic Compute Cloud)** provides resizable virtual servers in the AWS Cloud.
+> [!summary] What is EC2?
+> **Amazon EC2 (Elastic Compute Cloud)** lets you create and run resizable virtual servers in AWS.
 
----
+## 1. EC2 Instance
 
-## 🖥️ 1. EC2 Instance
+An **EC2 instance** is a virtual machine running in an AWS data center. It provides CPU, RAM, storage, an operating system, and network connectivity.
 
-An **EC2 Instance** is a **virtual machine (virtual computer)** running inside AWS.
+Think of it as **renting a computer from AWS** and accessing it remotely.
 
-It provides resources such as:
+Related: [[02 - EC2 Instances]] · [[03_EC2 InstancesType]]
 
-- **CPU** → Processing power
-    
-- **RAM** → Memory
-    
-- **Storage** → Disk space
-    
-- **Operating System** → Ubuntu, Amazon Linux, Windows, etc.
-    
-- **Networking** → IP addresses and network connectivity
-    
+## 2. Elastic IP
 
-### Simple Understanding
+An **Elastic IP (EIP)** is an allocated static public IPv4 address that can be associated with an AWS resource.
 
-Think of an EC2 instance as **renting a computer from AWS**.
+- A normal auto-assigned public IPv4 address can change after an instance is stopped and started.
+- An Elastic IP provides a stable address while it remains allocated.
+- You can reassociate it with another supported resource when required.
+- Check current AWS public IPv4 pricing before allocating one.
 
-```text
-Your Computer
-├── CPU
-├── RAM
-├── Storage
-└── Operating System
+## 3. Connecting to EC2 with SSH
 
-        ↓ Similar concept
-
-EC2 Instance
-├── CPU
-├── RAM
-├── Storage
-└── Operating System
-```
-
-The difference is that your physical computer is with you, while an EC2 instance runs in an **AWS data center** and can be accessed remotely.
-
----
-
-## 📍 2. Elastic IP
-
-An **Elastic IP** is a **static public IPv4 address** that can be associated with an EC2 instance.
-
-### Why do we need it?
-
-An EC2 instance's normal public IP can change when the instance is stopped and started.
-
-Example:
+**SSH (Secure Shell)** allows secure remote terminal access to a Linux instance.
 
 ```text
-Before:
-EC2 → 13.201.10.50
-
-Stop → Start
-
-After:
-EC2 → 3.110.25.80
+Your laptop → Network route → Security Group → EC2 instance → SSH terminal
 ```
 
-This can be inconvenient if an application or service depends on the IP address.
+Related: [[07 - SSH Connection]] · [[06 - Security Groups]] · [[08 - Key Pairs]]
 
-With an Elastic IP:
+## 4. SSH Port 22
 
-```text
-Elastic IP
-     ↓
-EC2 Instance
-     ↓
-Application
-```
-
-The public IP remains the same while it is associated with the resource.
-
-### Important
-
-- Elastic IP is not automatically assigned.
-    
-- You allocate an Elastic IP and associate it with an EC2 instance.
-    
-- An Elastic IP can be reassociated with another EC2 instance when required.
-    
-- AWS may charge for public IPv4 addresses, including Elastic IP usage, depending on the current pricing rules.
-    
-
----
-
-# 🔐 3. Connecting to an EC2 Instance
-
-One common way to connect to a Linux EC2 instance is **SSH (Secure Shell)**.
-
-SSH allows us to remotely access the terminal of the EC2 instance.
-
-```text
-Your Laptop
-     │
-     │ SSH
-     ↓
-EC2 Instance
-```
-
-After connecting, you can execute commands on the remote machine.
-
-For example:
-
-```bash
-ls
-cd
-mkdir
-sudo apt update
-python3
-npm install
-```
-
----
-
-# 🚪 4. SSH Port 22
-
-SSH normally uses:
-
-```text
-Port: 22
-Protocol: TCP
-```
-
-The EC2 instance is protected by a **Security Group (SG)**.
-
-A Security Group works like a **virtual firewall** that controls network traffic to and from the instance.
+SSH normally uses **TCP port 22**.
 
 Example inbound rule:
 
-```text
-Type:       SSH
-Protocol:   TCP
-Port:       22
-Source:     Your IP
-```
+| Setting | Example |
+|---|---|
+| Type | SSH |
+| Protocol | TCP |
+| Port | 22 |
+| Source | Your public IP `/32` |
 
-### ⚠️ Security Note
+Avoid exposing SSH to `0.0.0.0/0` unless there is a specific, justified reason. Consider AWS Systems Manager Session Manager where appropriate.
 
-You don't normally need to allow SSH from the entire internet.
+## 5. Key Pair and `.pem`
 
-Avoid unnecessarily using:
+An SSH key pair contains a public key and a private key. A downloaded `.pem` file commonly contains the private key.
 
-```text
-0.0.0.0/0
-```
-
-for SSH because it allows connections from any IPv4 address.
-
-When possible, restrict SSH access to your own IP address:
-
-```text
-YOUR_IP/32
-```
-
----
-
-# 🔑 5. `.pem` Key
-
-When creating an EC2 instance, you can create or select an **SSH key pair**.
-
-The private key may be downloaded as a:
-
-```text
-.pem
-```
-
-file.
+Keep the private key secure and never share it.
 
 Example:
-
-```text
-my-key.pem
-```
-
-The private key is used to authenticate when connecting to the EC2 instance.
-
-### Example
 
 ```bash
-ssh -i "my-key.pem" ubuntu@13.201.10.50
+ssh -i "my-key.pem" ubuntu@YOUR_EC2_PUBLIC_IP
 ```
 
-Here:
+The default username is commonly `ubuntu` for Ubuntu AMIs and `ec2-user` for Amazon Linux.
+
+Related: [[08 - Key Pairs]] · [[07 - SSH Connection]]
+
+## 6. Security Groups
+
+A **Security Group** is a stateful virtual firewall associated with an EC2 network interface.
+
+- **Inbound rules:** control incoming connections.
+- **Outbound rules:** control outgoing connections.
+- Return traffic for an allowed connection is automatically permitted.
+
+Common ports:
+
+| Purpose | Protocol | Port |
+|---|---|---:|
+| SSH | TCP | 22 |
+| HTTP | TCP | 80 |
+| HTTPS | TCP | 443 |
+
+Open only the ports your workload needs.
+
+Related: [[06 - Security Groups]]
+
+## 7. Website Hosting Flow
 
 ```text
-ssh
-│
-├── -i
-│    └── Specifies the private key
-│
-├── my-key.pem
-│    └── Private SSH key
-│
-└── ubuntu@13.201.10.50
-     │       │
-     │       └── EC2 public IP
-     └────────── EC2 username
-```
-
-For Ubuntu, the default username is commonly:
-
-```text
-ubuntu
-```
-
-For Amazon Linux, it is commonly:
-
-```text
-ec2-user
-```
-
----
-
-# 🛡️ 6. Security Group
-
-A **Security Group** acts as a virtual firewall for an EC2 instance.
-
-It controls:
-
-- **Inbound traffic** → Traffic coming into the instance
-    
-- **Outbound traffic** → Traffic going out of the instance
-    
-
-Example:
-
-```text
-Security Group
-│
-├── SSH   → TCP 22
-├── HTTP  → TCP 80
-└── HTTPS → TCP 443
-```
-
-For example, if you host a website:
-
-```text
+User's browser
+      ↓
 Internet
-   │
-   ├── Port 80  → HTTP
-   │
-   └── Port 443 → HTTPS
-              ↓
-         Security Group
-              ↓
-          EC2 Instance
+      ↓
+Public IP / DNS
+      ↓
+Security Group (HTTP/HTTPS allowed)
+      ↓
+EC2 instance
+      ↓
+Web server (Nginx / Apache)
+      ↓
+Application
 ```
 
----
+The web server and application must be installed and configured unless the selected image or setup already includes them.
 
-# 🧠 7. Complete EC2 Connection Flow
+## 8. Quick Revision
 
-```text
-                    AWS
-                     │
-             ┌───────▼───────┐
-             │  EC2 Instance │
-             │               │
-             │ CPU           │
-             │ RAM           │
-             │ Storage       │
-             │ OS            │
-             └───────┬───────┘
-                     │
-              Security Group
-                     │
-                 Port 22
-                     │
-                  SSH
-                     │
-                     ▼
-                Your Laptop
-```
-
-Authentication happens using the SSH private key:
-
-```text
-Laptop
-  │
-  │ SSH + .pem key
-  ↓
-Security Group
-  │
-  │ Port 22 allowed
-  ↓
-EC2 Instance
-```
-
----
-
-# 📌 Quick Revision
-
-|Concept|Meaning|
+| Concept | Meaning |
 |---|---|
-|**EC2**|AWS service for virtual servers|
-|**EC2 Instance**|A virtual machine|
-|**Elastic IP**|Static public IPv4 address|
-|**Security Group**|Virtual firewall|
-|**SSH**|Secure remote connection|
-|**Port 22**|Default SSH port|
-|**`.pem`**|SSH private key file|
-|**Inbound Rule**|Controls incoming traffic|
-|**Outbound Rule**|Controls outgoing traffic|
+| EC2 | AWS virtual server service |
+| Instance | A virtual machine |
+| Elastic IP | Allocated static public IPv4 address |
+| Security Group | Stateful virtual firewall |
+| SSH | Secure remote terminal access |
+| Port 22 | Default SSH port |
+| `.pem` | Common private-key file format |
+| Inbound rule | Controls incoming connections |
+| Outbound rule | Controls outgoing connections |
 
----
+## 9. Related Notes
 
-# 🔗 Related Topics
+- [[02 - EC2 Instances]]
+- [[03_EC2 InstancesType]]
+- [[04 - AMI]]
+- [[05 - EBS]]
+- [[06 - Security Groups]]
+- [[07 - SSH Connection]]
+- [[08 - Key Pairs]]
+- [[09 - EC2 Pricing]]
+- [[10 - EC2 User Data]]
+- [[11 - Auto Scaling Groups]]
+- [[12 - Load Balancer]]
+- [[13 - VPC]]
 
-- [[2. Instance Types]]
-    
-- [[3. AMI]]
-    
-- [[4. EBS]]
-    
-- [[5. Security Groups]]
-    
-- [[6. Key Pairs]]
-    
-- [[7. EC2 Pricing]]
-    
-- [[8. EC2 User Data]]
-    
-- [[9. Auto Scaling]]
-    
-- [[10. Load Balancer]]
-    
-
----
-
-## 💡 One-Line Definition
-
-> **EC2 is an AWS service that lets you create and run virtual computers in the cloud.**
+> **One-line definition:** EC2 is an AWS service for creating and running virtual computers in the cloud.
