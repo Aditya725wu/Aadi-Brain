@@ -10,7 +10,7 @@ tags:
 
 # 03 - JVM (Java Virtual Machine)
 
-> [!abstract] Core Idea  
+> [!abstract] Core Idea
 > The **Java Virtual Machine (JVM)** is a runtime engine that executes Java bytecode and allows Java programs to run on different operating systems using compatible JVM implementations.
 
 ## 1. Why Do We Need the JVM?
@@ -21,9 +21,7 @@ The JVM makes this possible by providing a platform-specific runtime that can ex
 
 ## 2. How Does the JVM Work?
 
-
-mermaid
-```
+```mermaid
 flowchart TD
     A["Java Source Code"]
     B["Java Compiler"]
@@ -40,21 +38,16 @@ flowchart TD
 ### Step-by-step
 
 1. Write the program in a `.java` file.
-    
 2. The Java compiler (`javac`) converts the source code into bytecode.
-    
 3. Bytecode is stored in a `.class` file.
-    
 4. The JVM loads and executes the bytecode.
-    
 5. The program produces its output.
-    
 
 ## 3. Example
 
 Java source code:
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, Java!");
@@ -64,7 +57,7 @@ public class Main {
 
 Compile the program:
 
-```
+```bash
 javac Main.java
 ```
 
@@ -72,13 +65,13 @@ This generates `Main.class`.
 
 Run the program:
 
-```
+```bash
 java Main
 ```
 
 Output:
 
-```
+```text
 Hello, Java!
 ```
 
@@ -86,7 +79,7 @@ Hello, Java!
 
 ## 4. How Does the JVM Enable Platform Independence?
 
-```
+```mermaid
 flowchart TD
     A["Main.java"]
     B["Compile Once"]
@@ -110,46 +103,30 @@ This principle is called **Write Once, Run Anywhere (WORA)**.
 
 ## 5. JVM vs JDK vs JRE
 
-|Component|Main purpose|
+| Component | Main purpose |
 |---|---|
-|JVM|Executes Java bytecode.|
-|JRE|Traditional term for the environment needed to run Java applications.|
-|JDK|Provides tools to develop Java applications and the required runtime components.|
+| JVM | Executes Java bytecode. |
+| JRE | Traditional term for the environment needed to run Java applications. |
+| JDK | Provides tools to develop Java applications and the required runtime components. |
 
 Remember:
 
 - **JVM:** Executes.
-    
 - **JRE:** Runs applications.
-    
 - **JDK:** Develops applications.
-    
 
 Modern Java distributions do not always provide a separate JRE installation.
 
 ## 6. Key Points to Remember
 
 - JVM stands for Java Virtual Machine.
-    
 - It executes Java bytecode stored in `.class` files.
-    
 - The `javac` compiler generates bytecode from Java source code.
-    
 - Compatible JVM implementations allow the same bytecode to run on different platforms.
-    
 - The JVM is part of Java's runtime architecture.
-    
 
 ## Navigation
 
-```
-name ← Previous: JDK
-type link
-action 02 - JDK
-```
+← [[02- JDK|Previous: JDK]]
 
-```
-name Next → Java Program Structure
-type link
-action 04 - Java Program Structure
-```
+[[04 - Java Program Structure|Next: Java Program Structure]] →
