@@ -1,16 +1,11 @@
 ---
-
-title: 03 - JVM  
+title: "03 - JVM"
 aliases:
-
-- Java Virtual Machine  
-    tags:
-    
-- programming/java
-    
-- java/internals
-    
-
+  - "Java Virtual Machine"
+  - "JVM in Java"
+tags:
+  - programming/java
+  - java/tools
 ---
 
 # 03 - JVM (Java Virtual Machine)
