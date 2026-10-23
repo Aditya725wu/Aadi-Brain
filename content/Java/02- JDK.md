@@ -1,18 +1,11 @@
 ---
-
-title: 02 - JDK  
+title: "02 - JDK"
 aliases:
-
-- Java Development Kit
-    
-- JDK in Java  
-    tags:
-    
-- programming/java
-    
-- java/tools
-    
-
+  - Java Development Kit
+  - JDK in Java
+tags:
+  - programming/java
+  - java/tools
 ---
 
 # 02 - Java Development Kit (JDK)
